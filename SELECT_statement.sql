@@ -28,3 +28,20 @@ FROM
 WHERE
     first_name = 'Kellie'
         OR first_name = 'Aruna';
+        
+/* AND operator is 1st & OR operator is 2nd */
+/* Use () to create the conditions and order of operator */
+/* Retrieve a list with all female employees whose first name is either Kellie or Aruna */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    gender = 'F'
+        AND (first_name = 'Kellie'
+        OR first_name = 'Aruna');
+        
+/* AND condition set on different columns */
+
+
+
