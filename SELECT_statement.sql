@@ -58,7 +58,7 @@ FROM
 WHERE
     first_name NOT IN ('John' , 'Mark', 'Jacob');
 
-/* LIKE , NOT LIKE operator  LIKE(%)  LIKE('%fer%')*/ 
+/* LIKE , NOT LIKE operator  LIKE(fer%) begins with fer, LIKE(%fer) ending with fer,  LIKE('%fer%') fer will apear somewhere in name*/ 
 /* % used for matching sequence characters and _ is used for matching single character LIKE('fer_') */
 
 /* Retrieve employees whose first name starts with “Mark” */
@@ -84,3 +84,21 @@ FROM
     employees
 WHERE
     emp_no LIKE ('1000_');
+
+/* Whild Card characters are (% _ *) */
+/* Extract all individuals from the ‘employees’ table whose first name contains “Jack”*/
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name LIKE ('%Jack%');
+
+
+/* Extract another list containing the names of employees that do not contain “Jack” */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT LIKE ('%Jack%');
