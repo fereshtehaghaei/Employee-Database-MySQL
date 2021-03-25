@@ -179,4 +179,17 @@ SELECT
     hire_date
 FROM
     employees;
+/* Aggregate Functions: COUNT(); SUM(); MIN(); MAX(); AVG(); */
+/* COUNT(DISTINCT) */
+/* How many employees are in our Database */
+SELECT 
+    COUNT(emp_no)
+FROM
+    employees;
+
+/* How many different names can be found in the "employees" table */
+SELECT 
+    COUNT(DISTINCT first_name)
+FROM
+    employees;
 
