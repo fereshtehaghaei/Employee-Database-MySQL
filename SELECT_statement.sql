@@ -58,3 +58,29 @@ FROM
 WHERE
     first_name NOT IN ('John' , 'Mark', 'Jacob');
 
+/* LIKE , NOT LIKE operator  LIKE(%)  LIKE('%fer%')*/ 
+/* % used for matching sequence characters and _ is used for matching single character LIKE('fer_') */
+
+/* Retrieve employees whose first name starts with “Mark” */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name LIKE ('Mark%');
+
+/* Retrieve a list with all employees who have been hired in the year 2000 */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date LIKE ('%2000%');
+
+/* Retrieve a list with all employees whose employee number is written with 5 characters, and starts with “1000” */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    emp_no LIKE ('1000_');
