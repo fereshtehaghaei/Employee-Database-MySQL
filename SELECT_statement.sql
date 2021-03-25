@@ -121,4 +121,9 @@ WHERE
     emp_no NOT BETWEEN 10004 AND 10012;
 
 /* Select the names of all departments with numbers between ‘d003’ and ‘d006’ */
-select * from departments where dept_no between 'd003' AND 'd006';
+SELECT 
+    dept_name
+FROM
+    departments
+WHERE
+    dept_no BETWEEN 'd003' AND 'd006';
