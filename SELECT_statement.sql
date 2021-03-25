@@ -127,3 +127,29 @@ FROM
     departments
 WHERE
     dept_no BETWEEN 'd003' AND 'd006';
+
+/* NULL & NOT NULL operator */
+/* Select the names of all departments whose department number value is not null */
+SELECT 
+    dept_name
+FROM
+    departments
+WHERE
+    dept_no IS NOT NULL;
+
+/* Comparison Operators = , > , >= , < , <> ,  != , */
+/* provide a list of employees that were hired after 1st of Jan 2000 */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date > '2000-01-01';
+    
+/* provide a list of employees that were hired before 1st of Feb 1985 */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date < '1985-02-01';
