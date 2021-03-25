@@ -41,7 +41,12 @@ WHERE
         AND (first_name = 'Kellie'
         OR first_name = 'Aruna');
         
-/* AND condition set on different columns */
-
-
+/* IN & NOT IN operator allows to return the names written in a parantheses */
+/* retrieve all individuals from the “employees” table, whose first name is either “Denis”, "Kellie" ,or “Elvis” */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name IN ('Denis' , 'Elvis', 'Kellie');
 
