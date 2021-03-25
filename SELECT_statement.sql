@@ -21,3 +21,10 @@ WHERE
     
 /* Retrieve a list with all female employees whose first name is Kellie */ 
 /* OR condition set on the same column */
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name = 'Kellie'
+        OR first_name = 'Aruna';
