@@ -170,3 +170,13 @@ FROM
     salaries
 WHERE
     salary > 150000;
+
+/* DISTINCT */
+SELECT DISTINCT gender FROM employees;
+
+/* Obtain a list with all different “hire dates” from the “employees” table */
+SELECT 
+    hire_date
+FROM
+    employees;
+
