@@ -50,3 +50,11 @@ FROM
 WHERE
     first_name IN ('Denis' , 'Elvis', 'Kellie');
 
+/* NOT IN operator */    
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT IN ('John' , 'Mark', 'Jacob');
+
