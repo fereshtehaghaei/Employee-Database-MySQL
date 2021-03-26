@@ -290,6 +290,7 @@ ORDER BY salary;
 /* HAVING */
 /* HAVING goes between GROUP BY and Order BY */
 /* HAVING is always used when aggregate funcitons are used:(COUNT, SUM, AVG, MAX, MIN) */
+/* Havign can not have aggregate functions with AND , OR clause mixed
 /*===========*/
 
 /* Extract all first name that appear more than 250 times in employee table */
@@ -320,6 +321,18 @@ WHERE
 GROUP BY first_name
 HAVING COUNT(first_name) < 200
 ORDER BY names_count DESC;
+
+/*===============*/
+/* Aggregate functions are used in GROUP BY + HAVING
+	General conditions are used in WHERE 
+SELECT col_name(s)
+FROM table_name
+WHERE conditions
+GROUP BY col_name(s)
+HAVING conditions
+ORDER BY col_name(s)
+
+/*===============*/
 
 
 
