@@ -310,6 +310,16 @@ GROUP BY emp_no
 HAVING AVG(salary) > 120000
 ORDER BY emp_no;
 
+/* Extract a list of all names that are encountered less than 200 times and refer to people hired after 1st of Jan 1999 */
+SELECT 
+    first_name, COUNT(first_name) AS names_count
+FROM
+    employees
+WHERE
+    hire_date > '1999-01-01'
+GROUP BY first_name
+HAVING COUNT(first_name) < 200
+ORDER BY names_count DESC;
 
 
 
