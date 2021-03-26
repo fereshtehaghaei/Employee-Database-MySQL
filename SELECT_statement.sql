@@ -392,3 +392,6 @@ VALUES (999903, 'd005', '1997-10-01', '9999-01-01');
 /* Create a new department called “Business Analysis”. Register it under number ‘d010’. */
 INSERT INTO departments VALUES ('d010', 'Business Analysis');
 
+/*===================*/
+/* COMMIT + ROLLBACK */
+/*===================*/
