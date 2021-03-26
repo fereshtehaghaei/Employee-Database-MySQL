@@ -402,3 +402,10 @@ SET
     dept_name = 'Data Analysis'
 WHERE
     dept_no = 'd010';
+    
+/*===========*/
+/* DELETE */
+/*===========*/
+DELETE FROM departments 
+WHERE
+    dept_no = 'd010';
