@@ -355,6 +355,19 @@ FROM
     dept_emp
 LIMIT 100;
 
+/*================*/
+/* INSERT INTO + VALUES */
+/*================*/
+
+/* Select ten records from the “titles” table */
+SELECT 
+    *
+FROM
+    titles
+LIMIT 10;
+insert into titles (emp_no, title, from_date) 
+values (999903, 'Senior Engineer', '1997-10-01')
+order by title desc;
 
 
 
