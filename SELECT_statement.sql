@@ -10,17 +10,23 @@ FROM
 WHERE
     first_name = 'Denis';
 
-/* Retrieve a list with all female employees whose first name is Kellie */
+/*============*/
 /* AND condition set on different columns */
+/*============*/
+
+/* Retrieve a list with all female employees whose first name is Kellie */
 SELECT 
     *
 FROM
     employees
 WHERE
     first_name = 'Denis' AND gender = 'F';
+
+/*============*/
+/* OR condition set on the same column */
+/*============*/
     
 /* Retrieve a list with all female employees whose first name is Kellie */ 
-/* OR condition set on the same column */
 SELECT 
     *
 FROM
@@ -28,9 +34,12 @@ FROM
 WHERE
     first_name = 'Kellie'
         OR first_name = 'Aruna';
-        
+
+/*============*/        
 /* AND operator is 1st & OR operator is 2nd */
 /* Use () to create the conditions and order of operator */
+/*============*/
+
 /* Retrieve a list with all female employees whose first name is either Kellie or Aruna */
 SELECT 
     *
@@ -41,7 +50,10 @@ WHERE
         AND (first_name = 'Kellie'
         OR first_name = 'Aruna');
         
+ /*============*/       
 /* IN & NOT IN operator allows to return the names written in a parantheses */
+/*============*/
+
 /* retrieve all individuals from the “employees” table, whose first name is either “Denis”, "Kellie" ,or “Elvis” */
 SELECT 
     *
@@ -50,7 +62,10 @@ FROM
 WHERE
     first_name IN ('Denis' , 'Elvis', 'Kellie');
 
+/*============*/
 /* NOT IN operator */    
+/*============*/
+
 SELECT 
     *
 FROM
@@ -58,8 +73,10 @@ FROM
 WHERE
     first_name NOT IN ('John' , 'Mark', 'Jacob');
 
+/*============*/
 /* LIKE , NOT LIKE operator  LIKE(fer%) begins with fer, LIKE(%fer) ending with fer,  LIKE('%fer%') fer will apear somewhere in name*/ 
 /* % used for matching sequence characters and _ is used for matching single character LIKE('fer_') */
+/*============*/
 
 /* Retrieve employees whose first name starts with “Mark” */
 SELECT 
@@ -85,7 +102,10 @@ FROM
 WHERE
     emp_no LIKE ('1000_');
 
+/*============*/
 /* Whild Card characters are (% _ *) */
+/*============*/
+
 /* Extract all individuals from the ‘employees’ table whose first name contains “Jack”*/
 SELECT 
     *
@@ -103,7 +123,10 @@ FROM
 WHERE
     first_name NOT LIKE ('%Jack%');
 
+/*============*/
 /* BETWEEN operator always used by AND operator */
+/*============*/
+
 /* Select all the information from the “salaries” table regarding contracts from 66,000 to 70,000 dollars per year. */
 SELECT 
     *
@@ -128,7 +151,10 @@ FROM
 WHERE
     dept_no BETWEEN 'd003' AND 'd006';
 
+/*============*/
 /* NULL & NOT NULL operator */
+/*============*/
+
 /* Select the names of all departments whose department number value is not null */
 SELECT 
     dept_name
@@ -137,7 +163,10 @@ FROM
 WHERE
     dept_no IS NOT NULL;
 
+/*============*/
 /* Comparison Operators = , > , >= , < , <> ,  != , */
+/*============*/
+
 /* provide a list of employees that were hired after 1st of Jan 2000 */
 SELECT 
     *
@@ -171,7 +200,10 @@ FROM
 WHERE
     salary > 150000;
 
+/*============*/
 /* DISTINCT */
+/*============*/
+
 SELECT DISTINCT gender FROM employees;
 
 /* Obtain a list with all different “hire dates” from the “employees” table */
@@ -179,8 +211,11 @@ SELECT
     hire_date
 FROM
     employees;
+/*============*/
 /* Aggregate Functions: COUNT(); SUM(); MIN(); MAX(); AVG(); */
 /* COUNT(DISTINCT) */
+/*============*/
+
 /* How many employees are in our Database */
 SELECT 
     COUNT(emp_no)
@@ -214,6 +249,21 @@ SELECT
 FROM
     employees
 ORDER BY hire_date DESC;
+
+/*============*/
+/* GROUP BY */
+/*===========*/
+/* GROUP BY placed right after WHERE conditions and before ORDER BY 
+SELECT col_name FROM table_name WHERE conditions GROUP BY column_name(s) ORDER BY column_name(s); */
+/* Always include the field you have grouped your results by the SELECT statement */
+SELECT 
+    first_name, COUNT(first_name)
+FROM
+    employees
+GROUP BY first_name
+ORDER BY first_name DESC;
+
+/* */
 
 
 
