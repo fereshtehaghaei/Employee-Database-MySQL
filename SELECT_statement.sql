@@ -359,23 +359,25 @@ LIMIT 100;
 /* INSERT INTO + VALUES */
 /*================*/
 
+INSERT INTO employees
+VALUES
+(999903,'1977-09-14','Johnathan','Creek','M','1999-01-01');
+
+
 /* Select ten records from the “titles” table */
 SELECT 
     *
 FROM
     titles
 LIMIT 10;
-insert into titles (emp_no, title, from_date) 
-values (999903, 'Senior Engineer', '1997-10-01')
-order by title desc;
 
-
-
-
-
-
-
-
-
-
+/* insert information about employee number 999903. State that he/she is a “Senior Engineer”, who has started working in this position on October 1st, 1997.
+	Sort the records from the “titles” table in descending order */
+INSERT INTO titles (emp_no, title, from_date) 
+VALUES (999903, 'Senior Engineer', '1997-10-01');
+SELECT 
+    *
+FROM
+    titles
+ORDER BY title DESC;
 
