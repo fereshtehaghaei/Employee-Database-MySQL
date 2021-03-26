@@ -263,7 +263,16 @@ FROM
 GROUP BY first_name
 ORDER BY first_name DESC;
 
-/* */
+/*===========*/
+/* AS, Alias used to rename a selection in querey */
+/*===========*/
+SELECT 
+    first_name, COUNT(first_name) AS name_count
+FROM
+    employees
+GROUP BY first_name
+ORDER BY first_name DESC;
+
 
 
 
