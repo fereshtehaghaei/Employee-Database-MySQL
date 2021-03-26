@@ -286,6 +286,29 @@ WHERE
 GROUP BY salary
 ORDER BY salary;
 
+/*===========*/
+/* HAVING */
+/* HAVING goes between GROUP BY and Order BY */
+/* HAVING is always used when aggregate funcitons are used:(COUNT, SUM, AVG, MAX, MIN) */
+/*===========*/
+
+/* Extract all first name that appear more than 250 times in employee table */
+SELECT 
+    first_name, COUNT(first_name) AS names_count
+FROM
+    employees
+GROUP BY first_name
+HAVING COUNT(first_name) > 250
+ORDER BY first_name;
+
+/* Select all employees whose average salary is higher than $120,000 annually */
+SELECT 
+    emp_no, AVG(salary) AS avg_salary
+FROM
+    salaries
+GROUP BY emp_no
+HAVING AVG(salary) > 120000
+ORDER BY emp_no;
 
 
 
