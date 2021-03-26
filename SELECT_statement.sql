@@ -344,5 +344,25 @@ GROUP BY emp_no
 HAVING COUNT(from_date) > 1
 ORDER BY emp_no;
 
+/* ============ */
+/* LIMIT  always goes at the very end of query*/
+/* ============ */
+
+/* Select the first 100 rows from the ‘dept_emp’ table */ 
+SELECT 
+    *
+FROM
+    dept_emp
+LIMIT 100;
+
+
+
+
+
+
+
+
+
+
 
 
