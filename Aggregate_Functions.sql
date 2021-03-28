@@ -30,7 +30,10 @@ WHERE
 /*============*/
 
 /* Which is the lowest employee number in the database?*/
-select min(emp_no) from employees;
+SELECT 
+    MIN(emp_no)
+FROM
+    employees;
 
 /* Which is the highest employee number in the database? */
 SELECT 
