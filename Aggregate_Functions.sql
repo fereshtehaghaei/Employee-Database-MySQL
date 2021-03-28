@@ -29,7 +29,14 @@ WHERE
 /* MIN() MAX() */
 /*============*/
 
+/* Which is the lowest employee number in the database?*/
+select min(emp_no) from employees;
 
+/* Which is the highest employee number in the database? */
+SELECT 
+    MAX(emp_no)
+FROM
+    employees;
 
 /*============*/
 /* AVG */
