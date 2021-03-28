@@ -66,11 +66,21 @@ WHERE
     from_date > '1997-01-01';
 
 /*============*/
-/* COALESCE */
+/* COALESCE( expression_1, expression_2, expression_N)
+	works best with one, two or more arguments */
 /*============*/
 
-
+/* Select the department number and name from the ‘departments_dup’ table and add a third column 
+where you name the department number (‘dept_no’) as ‘dept_info’. If ‘dept_no’ does not have a value, use ‘dept_name’. */
+SELECT
+    dept_no,
+    dept_name,
+    COALESCE(dept_no, dept_name) AS dept_info
+FROM
+    departments_dup
+ORDER BY dept_no ASC;
 
 /*============*/
-/* IFNULL */
+/* IFNULL(expression 1, expression 2) 
+	works best with two arguments*/
 /*============*/
