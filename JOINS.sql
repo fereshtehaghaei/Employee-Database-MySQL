@@ -68,13 +68,18 @@ SELECT
 /*============*/
 
 /* Extract a list containing information about all managers’ employee number, first and last name, department number, and hire date. */
-select * from dept_manager_dup;
-select * from departments_dup;
 select * from dept_manager;
 select * from employees;
-select t1.emp_no, t1.first_name, t1.last_name, t1.hire_date, t2.dept_no
-from employees t1
-inner join dept_manager t2 ON t1.emp_no = t2.emp_no;
+SELECT 
+    t1.emp_no,
+    t1.first_name,
+    t1.last_name,
+    t1.hire_date,
+    t2.dept_no
+FROM
+    employees t1
+        INNER JOIN
+    dept_manager t2 ON t1.emp_no = t2.emp_no;
 
 /*============*/
 /* LEFT JOINS */
