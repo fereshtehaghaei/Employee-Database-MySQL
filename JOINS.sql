@@ -47,12 +47,9 @@ WHERE
 
 
 /*============*/
-/* JOINS */
-/*============*/
-
-
-/*============*/
 /* INNER JOINS */
+/* Does NOT extract NULL values */
+
 /* SELECT
 		table_1.column_name(s), table_2.column_name(s)
 	FROM
@@ -60,6 +57,7 @@ WHERE
 	JOIN
 		table_2 ON table_1.column_name = table_2.column_name;
 */
+
 /* using INNER JOIN with Aliases 
 SELECT
 		t1.column_name(s), t2.column_name(s)
@@ -69,6 +67,14 @@ SELECT
 		table_2 t2 ON t1.column_name = t2.column_name;*/
 /*============*/
 
+/* Extract a list containing information about all managers’ employee number, first and last name, department number, and hire date. */
+select * from dept_manager_dup;
+select * from departments_dup;
+select * from dept_manager;
+select * from employees;
+select t1.emp_no, t1.first_name, t1.last_name, t1.hire_date, t2.dept_no
+from employees t1
+inner join dept_manager t2 ON t1.emp_no = t2.emp_no;
 
 /*============*/
 /* LEFT JOINS */
