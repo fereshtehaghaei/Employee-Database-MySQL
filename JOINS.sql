@@ -16,8 +16,7 @@ WHERE
     dept_no = 'd002'; 
 INSERT INTO departments_dup(dept_no) VALUES ('d010'), ('d011');
 
-
-
+/******************************/
 
 DROP TABLE IF EXISTS dept_manager_dup;
 CREATE TABLE dept_manager_dup (
@@ -42,13 +41,10 @@ WHERE
 INSERT INTO departments_dup (dept_name)
 VALUES                ('Public Relations');
 
- 
-
 DELETE FROM departments_dup
-
 WHERE
-
     dept_no = 'd002'; 
+
 
 /*============*/
 /* JOINS */
