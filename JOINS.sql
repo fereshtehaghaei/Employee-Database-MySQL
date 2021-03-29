@@ -100,7 +100,7 @@ WHERE
     ORDER BY m.dept_no DESC, e.emp_no;
 
 /*============*/
-/* RIGHT JOINS */
+/* old JOINS syntax */
 /*============*/
 
 
