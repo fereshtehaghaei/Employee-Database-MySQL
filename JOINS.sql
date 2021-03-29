@@ -58,7 +58,15 @@ WHERE
 	FROM
 		table_1
 	JOIN
-		table_2 ON table_1.column_name = table_2.column_name;*/
+		table_2 ON table_1.column_name = table_2.column_name;
+*/
+/* using INNER JOIN with Aliases 
+SELECT
+		t1.column_name(s), t2.column_name(s)
+	FROM
+		table_1 t1
+	JOIN
+		table_2 t2 ON t1.column_name = t2.column_name;*/
 /*============*/
 
 
