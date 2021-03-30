@@ -48,7 +48,8 @@ WHERE
 
 /*============*/
 /* INNER JOINS */
-/* Does NOT extract NULL values */
+/* Does NOT extract NULL values 
+   connects only matching values*/
 
 /* SELECT
 		table_1.column_name(s), table_2.column_name(s)
@@ -131,7 +132,19 @@ WHERE
 
 /*============*/
 /* CROSS JOINS */
+/* CROSS JOIN connects all values, not just those that match */
 /*============*/
+
+/* Use a CROSS JOIN to return a list with all possible combinations between managers from the dept_manager table and department number 9. */
+SELECT 
+    dm.*, d.*
+FROM
+    departments d
+        CROSS JOIN
+    dept_manager dm
+WHERE
+    d.dept_no = 'd009'
+ORDER BY d.dept_no;
 
 /*============*/
 /* JOINS more than ONE Table */
