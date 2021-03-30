@@ -149,7 +149,16 @@ WHERE
 /*============*/
 /* JOINS more than ONE Table */
 /*============*/
+/* Select all managers’ first and last name, hire date, job title, start date, and department name. */
+select * from dept_manager;
+select * from employees;
+select * from titles;
+select * from departments;
 
+select e.first_name, e.last_name, e.hire_date, t.title, t.from_date, d.dept_name
+from employees e
+join titles t on e.emp_no = t.emp_no
+join departments d  where dept_no = 'd006'; 
 
 /*============*/
 /* UNION + UNION ALL */
