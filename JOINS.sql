@@ -114,11 +114,19 @@ FROM
 WHERE
     e.emp_no = m.emp_no;
 
-
 /*============*/
 /* JOINS & WHERE */
 /*============*/
-
+/* Select the first and last name, the hire date, and the job title of all employees 
+whose first name is “Margareta” and have the last name “Markovitch”. */
+SELECT 
+    e.emp_no, e.first_name, e.last_name, m.hire_date, t.title
+FROM
+    employees e,
+    titles t
+WHERE
+    e.last_name = 'Markovitch' AND e.first_name = 'Margareta'
+    ORDER BY e.emp_no;
 
 /*============*/
 /* CROSS JOINS */
