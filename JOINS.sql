@@ -174,7 +174,10 @@ WHERE
     t.title = 'Manager'
 ORDER BY e.emp_no; 
  
-
 /*============*/
 /* UNION + UNION ALL */
 /*============*/
+select * from dept_manager;
+select * from employees;
+select * from titles;
+select * from departments;
