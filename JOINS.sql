@@ -126,7 +126,7 @@ FROM
 JOIN 
     titles t ON e.emp_no = t.emp_no
 WHERE
-    last_name = 'Markovitch' AND first_name = 'Margareta'
+    e.last_name = 'Markovitch' AND e.first_name = 'Margareta'
     ORDER BY e.emp_no;
 
 /*============*/
