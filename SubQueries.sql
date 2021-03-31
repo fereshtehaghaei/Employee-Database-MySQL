@@ -2,7 +2,18 @@
 /* Subqueries with IN nested inside WHERE*/
 /* subqueries are queries embedded in query 
 	most of the time subquries are in a where clause in a select statement*/
+/*
+SELECT 
+	t1.col_1, t1.col_2
+FROM 
+	table_1 t1
+WHERE 
+	t1.col_1 IN(SELECT t2.col_1
+FROM 
+	table_2 t2);
+*/
 /*-------------------------*/
+
 /* Extract the information about all department managers who were hired 
 between the 1st of January 1990 and the 1st of January 1995. */
 select * from dept_manager;
