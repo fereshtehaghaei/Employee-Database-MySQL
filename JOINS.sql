@@ -189,7 +189,14 @@ FROM
     employees e ON e.emp_no = dm.emp_no
 GROUP BY gender;
 
-
-/*============*/
+/*====================*/
 /* UNION + UNION ALL */
-/*============*/
+/* UNION ALL : allows to unify tables
+				union, displayes distict values
+                union all, retrieves the duplicates as well
+	SELECT n_clumns
+    FROM table_1
+    UNION ALL SELECT n_columns
+    FROM  table _2;    
+/*===================*/
+
