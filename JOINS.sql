@@ -174,9 +174,7 @@ WHERE
     t.title = 'Manager'
 ORDER BY e.emp_no; 
  
-/*============*/
-/* UNION + UNION ALL */
-/*============*/
+/*-------------------*/
 select * from dept_manager;
 select * from employees;
 select * from titles;
@@ -188,3 +186,8 @@ from employees e
 join titles t on e.emp_no = t.emp_no
 where t.title = 'Manager' 
 group by gender;
+
+
+/*============*/
+/* UNION + UNION ALL */
+/*============*/
