@@ -183,6 +183,8 @@ select * from titles;
 select * from departments;
 
 /* How many male and how many female managers do we have in the ‘employees’ database? */
-select count(e.gender) AS Total_Count
+select e.gender, count(e.gender) AS Total_Count
 from employees e
-join 
+join titles t on e.emp_no = t.emp_no
+where t.title = 'Manager' 
+group by gender;
