@@ -1,6 +1,7 @@
 /*-------------------------*/
 /* Subqueries with IN nested inside WHERE*/
-/* subqueries are queries embedded in query */
+/* subqueries are queries embedded in query 
+	most of the time subquries are in a where clause in a select statement*/
 /*-------------------------*/
 /* Extract the information about all department managers who were hired 
 between the 1st of January 1990 and the 1st of January 1995. */
