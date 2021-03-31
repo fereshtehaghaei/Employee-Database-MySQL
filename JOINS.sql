@@ -181,3 +181,8 @@ select * from dept_manager;
 select * from employees;
 select * from titles;
 select * from departments;
+
+/* How many male and how many female managers do we have in the ‘employees’ database? */
+select count(e.gender) AS Total_Count
+from employees e
+join 
