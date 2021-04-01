@@ -17,7 +17,6 @@ FROM
 /*-------------------------*/
 
 /* find the name of employees that are working as managers in the enterprise */
-
 SELECT 
     e.first_name, e.last_name
 FROM
@@ -49,6 +48,20 @@ WHERE
 /* checks row by row and returns Boolean value, 
 tests row values for existence and it's faster*/
 /*-------------------------*/
+
+/* find the name of employees that are working as managers in the enterprise */
+SELECT 
+    e.first_name, e.last_name
+FROM
+    employees e
+WHERE
+    EXISTS( SELECT *
+        FROM
+            dept_manager dm
+        WHERE
+            dm.emp_no = e.emp_no)
+ORDER BY e.emp_no;
+
 /* Select the entire information for all employees whose job title is “Assistant Engineer” */
 SELECT *
 FROM
