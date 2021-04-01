@@ -67,9 +67,25 @@ END$$
 DELIMITER ;
 */
 
-/*  */
+/* create a program that will return a name, salary, start date and end date 
+	of a contract of a specifice employee we choose */
 DELIMITER $$
 CREATE PROCEDURE emp_avg_salary(IN p_emp_no INTEGER)
+BEGIN
+SELECT 
+		e.first_name, e.last_name, s.salary, s.from_date, s.to_date
+FROM 
+		employees e
+    JOIN 
+		salaries s ON e.emp_no = s.emp_no
+WHERE 
+		e.emp_no = p_emp_no;
+END$$
+DELIMITER ;
+
+/* create a program that will the average of a particular employee */
+DELIMITER $$
+CREATE PROCEDURE emp_avg2_salary(IN p_emp_no INTEGER)
 BEGIN
 SELECT 
 		e.first_name, e.last_name, AVG(s.salary)
@@ -82,7 +98,7 @@ WHERE
 END$$
 DELIMITER ;
 
-
+CALL employees.emp_avg2_salary(11033);
 
 
 
