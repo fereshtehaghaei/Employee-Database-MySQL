@@ -29,9 +29,19 @@ CREATE OR REPLACE VIEW v_dept_emp_latest_date AS
     
 SELECT * FROM employees.v_dept_emp_latest_date;
 
-/*  */
-
-
+/* Create a view that will extract the average salary of all managers registered in the database. Round this value to the nearest cent. */
+ select * from salaries;
+ select * from dept_manager;
+ 
+ CREATE OR REPLACE VIEW v_manager_avg_salay AS
+	SELECT
+		round(avg(salary),2)
+	FROM	
+		salaries s
+	JOIN
+		dept_manager dm ON s.emp_no = dm.emp_no;
+        
+select * from v_manager_avg_salay;
 
 
 
