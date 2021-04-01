@@ -15,7 +15,7 @@ BEGIN
 	SELECT * FROM table_name
     LIMIT 100;
 END$$
-DELIMITTER;
+DELIMITER ;
 */
 /* create a stored procedure that everytime it is run 
 	it returns the first 1,000 fows from the 'employees' table */
@@ -36,7 +36,19 @@ CALL employees.select_employees();
 	2nd way: if you have called USE database_name in the begining of your delimiter then you can just 
 			  CALL procedure_name();
     3rd way: click on the lightining icon next to stored procedures
+*/
 
+/* Create a procedure that will provide the average salary of all employees. Then, call the procedure.  */
+DELIMITER $$
+CREATE PROCEDURE avg_salary_procedure()
+BEGIN
+	SELECT 
+    AVG(salary)
+    FROM salaries;
+END$$
+DELIMITER ;
+
+CALL employees.avg_salary_procedure();
 
 
 
