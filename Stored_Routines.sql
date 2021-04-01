@@ -29,9 +29,13 @@ BEGIN
 END$$
 DELIMITER ;
 
+CALL employees.select_employees();
 
-
-
+/* 3 main ways to do invoking the procedure 
+	1st way: CALL database_name.procedure_name();
+	2nd way: if you have called USE database_name in the begining of your delimiter then you can just 
+			  CALL procedure_name();
+    3rd way: click on the lightining icon next to stored procedures
 
 
 
