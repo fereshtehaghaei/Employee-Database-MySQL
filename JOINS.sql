@@ -200,3 +200,34 @@ GROUP BY gender;
     FROM  table _2;    
 /*===================*/
 
+/*--------------------*/
+/* SELF JOINS */
+/*-------------------*/
+/* extract the record data only of those employees who are managers as well from emp_manager table */
+
+/* solution 1 */
+SELECT DISTINCT
+    e1.*
+FROM
+    emp_manager e1
+        JOIN
+    emp_manager e2 ON e1.emp_no = e2.manager_no;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
