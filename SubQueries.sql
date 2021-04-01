@@ -16,6 +16,18 @@ FROM
 */
 /*-------------------------*/
 
+/* find the name of employees that are working as managers in the enterprise */
+
+SELECT 
+    e.first_name, e.last_name
+FROM
+    employees e
+WHERE
+    e.emp_no IN (SELECT 
+            dm.emp_no
+        FROM
+            dept_manager dm);
+
 /* Extract the information about all department managers who were hired 
 between the 1st of January 1990 and the 1st of January 1995. */
 select * from dept_manager;
