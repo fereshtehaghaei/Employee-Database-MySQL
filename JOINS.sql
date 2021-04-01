@@ -213,21 +213,16 @@ FROM
         JOIN
     emp_manager e2 ON e1.emp_no = e2.manager_no;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* solution 2 */
+SELECT 
+    e1.*
+FROM
+    emp_manager e1
+        JOIN
+    emp_manager e2 ON e1.emp_no = e2.manager_no
+WHERE
+/* used IN operator from emp_no from e2 to = any manager number from the base table(emp_manager) */
+    e2.emp_no IN (SELECT 
+            manager_no
+        FROM
+            emp_manager);
