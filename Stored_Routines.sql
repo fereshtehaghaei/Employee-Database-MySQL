@@ -56,7 +56,7 @@ DROP PROCEDURE select_employees;
 /*--- Stored Procedure with an input parameter ----*/
 /*
 DELIMITER $$
-CREATE PROCEDURE procedure_name(IN p_parameter DataType)
+CREATE PROCEDURE procedure_name(in your_p_parameter_name DataType)
 BEGIN
 	SELECT col_1, col_2, ....
     FROM table_name
@@ -70,7 +70,7 @@ DELIMITER ;
 /* create a program that will return a name, salary, start date and end date 
 	of a contract of a specifice employee we choose */
 DELIMITER $$
-CREATE PROCEDURE emp_avg_salary(IN p_emp_no INTEGER)
+CREATE PROCEDURE emp_avg_salary(in p_emp_no INTEGER)
 BEGIN
 SELECT 
 		e.first_name, e.last_name, s.salary, s.from_date, s.to_date
@@ -85,7 +85,7 @@ DELIMITER ;
 
 /* create a program that will the average of a particular employee */
 DELIMITER $$
-CREATE PROCEDURE emp_avg2_salary(IN p_emp_no INTEGER)
+CREATE PROCEDURE emp_avg2_salary(in p_emp_no INTEGER)
 BEGIN
 SELECT 
 		e.first_name, e.last_name, AVG(s.salary)
@@ -101,12 +101,14 @@ DELIMITER ;
 CALL employees.emp_avg2_salary(11033);
 
 
+/* OUT parameter */
 /* ------ Stored procedures with an Output Parameter ----- */
 /* 
 DELIMITER $$
-CREATE PROCEDURE procedure_name(IN p_parameter DataType, OUT p_parameter)
+CREATE PROCEDURE procedure_name(in your_p_in_parameter DataType, out your_p_out_parameter DataType)
 BEGIN
-	SELECT col_1, col_2, ....
+	SELECT col_1, col_2, ...., or just your aggregate(function)
+    INTO p_out_parameter
     FROM table_name
     JOIN (if there are any)
     WHERE (if there are any)
@@ -114,6 +116,23 @@ BEGIN
 END$$
 DELIMITER ;
 */
+DELIMITER $$
+CREATE PROCEDURE emp_avg_salary(in p_emp_no INTEGER, out p_avg_salary DECIMAL(10,2))
+BEGIN
+SELECT 
+		AVG(s.salary)
+INTO
+	p_avg_salary
+FROM 
+		employees e
+    JOIN 
+		salaries s ON e.emp_no = s.emp_no
+WHERE 
+		e.emp_no = p_emp_no;
+END$$
+DELIMITER ;
+
+
 /*
 
 
