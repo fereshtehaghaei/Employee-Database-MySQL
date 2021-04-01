@@ -101,6 +101,21 @@ DELIMITER ;
 CALL employees.emp_avg2_salary(11033);
 
 
+/* ------ Stored procedures with an Output Parameter ----- */
+/* 
+DELIMITER $$
+CREATE PROCEDURE procedure_name(IN p_parameter DataType, OUT p_parameter)
+BEGIN
+	SELECT col_1, col_2, ....
+    FROM table_name
+    JOIN (if there are any)
+    WHERE (if there are any)
+    your_query;
+END$$
+DELIMITER ;
+*/
+/*
+
 
 
 
