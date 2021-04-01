@@ -50,6 +50,12 @@ DELIMITER ;
 
 CALL employees.avg_salary_procedure();
 
+DROP PROCEDURE select_employees;
+/*--- Another Way to Create Procedure ----*/
+/*
+
+*/
+
 
 
 
