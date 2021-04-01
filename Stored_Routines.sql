@@ -148,9 +148,27 @@ WHERE
 END$$
 DELIMITER ;
 
-
-
-
+/* VARIABLES */
+/*
+DELIMITER $$
+CREATE PROCEDURE procedure_name (in parameter, out parameter)
+*/
+/* 
+1.Create a Variable:
+	SET @output_variable = 0;
+2.Call the Procedure (means to Extract a value that will be assigned to the newly created variable)     
+	CALL database_name.procedure_name(your_input_value, @output_variable);
+3.Display the output of the procedure
+	SELECT @output_variable;
+    
+    
+/* Create a variable, called ‘v_emp_no’, 
+	Call the same procedure, 
+    inserting the values ‘Aruna’ and ‘Journel’ as a first and last name respectively.
+	Finally, select the obtained output. */
+SET @v_emp_no = 0;
+CALL employees.emp_info('Aruna', 'Journel', @v_emp_no);
+SELECT @v_emp_no;
 
 
 
