@@ -1,14 +1,16 @@
 /*-------------------------*/
 /* Subqueries with IN nested inside WHERE*/
 /* subqueries are queries embedded in query 
-	most of the time subquries are in a where clause in a select statement*/
+   always inside paranthesis ()
+   most of the time subquries are in a where clause in a select statement*/
 /*
 SELECT 
 	t1.col_1, t1.col_2
 FROM 
 	table_1 t1
 WHERE 
-	t1.col_1 IN(SELECT t2.col_1
+	t1.col_1 IN(SELECT 
+	t2.col_1
 FROM 
 	table_2 t2);
 */
