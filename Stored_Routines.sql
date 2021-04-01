@@ -51,10 +51,36 @@ DELIMITER ;
 CALL employees.avg_salary_procedure();
 
 DROP PROCEDURE select_employees;
-/*--- Another Way to Create Procedure ----*/
-/*
 
+/*----------------------------*/
+/*--- Stored Procedure with an input parameter ----*/
+/*
+DELIMITER $$
+CREATE PROCEDURE procedure_name(IN p_parameter DataType)
+BEGIN
+	SELECT col_1, col_2, ....
+    FROM table_name
+    JOIN (if there are any)
+    WHERE (if there are any)
+    your_query;
+END$$
+DELIMITER ;
 */
+
+/*  */
+DELIMITER $$
+CREATE PROCEDURE emp_avg_salary(IN p_emp_no INTEGER)
+BEGIN
+SELECT 
+		e.first_name, e.last_name, AVG(s.salary)
+FROM 
+		employees e
+    JOIN 
+		salaries s ON e.emp_no = s.emp_no
+WHERE 
+		e.emp_no = p_emp_no;
+END$$
+DELIMITER ;
 
 
 
