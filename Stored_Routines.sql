@@ -196,19 +196,19 @@ DELIMITER ;
 and returns the salary from the newest contract of that employee. */
 
 DELIMITER $$
-CREATE FUNCTION function_name(parameter data_type) RETURNS data_type
-DECLARE variable_name data_type
+CREATE FUNCTION emp_info(first_name last_name VARCHAR(255) RETURNS VARCHAR(255)
+DECLARE first_name VARCHAR(255)
 BEGIN
-	SELECT .....
+	SELECT s.salary 
 INTO 
-	new_declared_variable_name
+	emp_salary_info
 FROM 
-	table_name
+	salaries s
 JOIN 
-	if there are any
+	employees e
 WHERE
-	if you had a join = if you had a join
-RETURN variable_name
+	e.emp_no = s.emp_no
+RETURN first_name, last_name
 END $$
 DELIMITER ;
 
