@@ -196,7 +196,7 @@ DELIMITER ;
 and returns the salary from the newest contract of that employee. */
 
 DELIMITER $$
-CREATE FUNCTION emp_info(first_name last_name VARCHAR(255) RETURNS VARCHAR(255)
+CREATE FUNCTION emp_info(p_first_name VARCHAR(255), p_last_name VARCHAR(255)) RETURNS DECIMAL (10,2)
 DECLARE first_name VARCHAR(255)
 BEGIN
 	SELECT s.salary 
