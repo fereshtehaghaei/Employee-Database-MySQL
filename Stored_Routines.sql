@@ -189,9 +189,28 @@ WHERE
 	if you had a join = if you had a join
 RETURN variable_name
 END $$
+DELIMITER ;
 */
 
+/* Create a function called ‘emp_info’ that takes for parameters the first and last name of an employee, 
+and returns the salary from the newest contract of that employee. */
 
+DELIMITER $$
+CREATE FUNCTION function_name(parameter data_type) RETURNS data_type
+DECLARE variable_name data_type
+BEGIN
+	SELECT .....
+INTO 
+	new_declared_variable_name
+FROM 
+	table_name
+JOIN 
+	if there are any
+WHERE
+	if you had a join = if you had a join
+RETURN variable_name
+END $$
+DELIMITER ;
 
 
 
