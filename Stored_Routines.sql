@@ -172,6 +172,24 @@ SELECT @v_emp_no;
 
 /*========================*/
 /* User defined FUNCTIONS */
+/*=======================*/
+/*
+DELIMITER $$
+CREATE FUNCTION function_name(parameter data_type) RETURNS data_type
+DECLARE variable_name data_type
+BEGIN
+	SELECT .....
+INTO 
+	new_declared_variable_name
+FROM 
+	table_name
+JOIN 
+	if there are any
+WHERE
+	if you had a join = if you had a join
+RETURN variable_name
+END $$
+*/
 
 
 
