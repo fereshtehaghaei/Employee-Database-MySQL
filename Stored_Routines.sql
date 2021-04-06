@@ -203,24 +203,31 @@ DECLARE v_max_from_date date;
 DECLARE v_salary decimal(10,2);
 SELECT
     MAX(from_date)
-INTO v_max_from_date FROM
+INTO 
+	v_max_from_date 
+FROM
     employees e
-        JOIN
+JOIN
     salaries s ON e.emp_no = s.emp_no
 WHERE
     e.first_name = p_first_name
-        AND e.last_name = p_last_name;
+        AND 
+	e.last_name = p_last_name;
 SELECT
     s.salary
-INTO v_salary FROM
+INTO 
+	v_salary 
+FROM
     employees e
-        JOIN
+JOIN
     salaries s ON e.emp_no = s.emp_no
 WHERE
     e.first_name = p_first_name
-        AND e.last_name = p_last_name
-        AND s.from_date = v_max_from_date;    
-                RETURN v_salary;
+        AND 
+	e.last_name = p_last_name
+        AND 
+	s.from_date = v_max_from_date;    
+RETURN v_salary;
 END$$
 DELIMITER ;
 
