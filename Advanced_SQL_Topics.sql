@@ -173,5 +173,8 @@ WHERE
 		AND last_name = 'Facello';
 CREATE INDEX i_composite ON employees(first_name, last_name);
 
+# You can see the indexes by usig following query:
+# SHOW INDEX FROM table_name FROM database_name_that_table_belongs;
+SHOW INDEX FROM employees FROM employees;
 
 
