@@ -44,6 +44,7 @@ SET GLOBAL max_connections = 1;
 USE employees;
 COMMIT;
 
+#-----------------------
 # BEFORE INSESRT
 DELIMITER $$
 
@@ -57,7 +58,19 @@ BEGIN
 END $$
 DELIMITER ;
 
+#-------------------
+# BEFORE UPDATE
+DELIMITER $$
 
+CREATE TRIGGER before_salaries_insert
+BEFORE UPDATE ON salaries
+FOR EACH ROW
+BEGIN
+	IF NEW.salary < 0 THEN
+		SET NEW.salary = OLD.salary;
+	END IF;
+END $$
+DELIMITER ;
 
 
 
