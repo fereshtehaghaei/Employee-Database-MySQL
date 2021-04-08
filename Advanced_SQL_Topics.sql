@@ -86,6 +86,8 @@ SELECT DATE_FORMAT(SYSDATE(), '%y-%m-%d') as today;
 	deparment mangger table has been inserted. start date same as new from date = 1-1-9999
 */
 # After Trigger
+
+DELIMITER $$
 CREATE TRIGGER trig_ins_dept_mng
 AFTER INSERT ON dept_manager
 FOR EACH ROW
@@ -111,6 +113,23 @@ WHERE
 		END IF;
 END $$
 
+DELIMITER ;
+
+/* Create a trigger that checks if the hire date of an employee is higher than 
+the current date. If true, set this date to be the current date. 
+Format the output appropriately (YY-MM-DD).
+*/
+
+DELIMITER $$
+CREATE TRIGGER trig_hire_date
+BEFORE INSERT ON employees
+FOR EACH ROW
+BEGIN
+	IF NEW.hire_date < SYSDATE()THEN
+		SET NEW.hire_date = today;
+	END IF;
+END $$
+DELIMITER ;
 
 
 
