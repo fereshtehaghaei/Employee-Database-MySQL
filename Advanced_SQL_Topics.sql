@@ -73,7 +73,7 @@ END $$
 DELIMITER ;
 
 /*===================*/
-/* SYSTEM FUNCTIONS */
+# SYSTEM FUNCTIONS 
 /*===================*/
 
 /* DATE */
@@ -85,6 +85,7 @@ SELECT DATE_FORMAT(SYSDATE(), '%y-%m-%d') as today;
 	create a trigger that will apply several modifications to the salaries table once the relevant recored in 
 	deparment mangger table has been inserted. start date same as new from date = 1-1-9999
 */
+
 # After Trigger
 
 DELIMITER $$
@@ -137,6 +138,12 @@ SELECT *
 FROM  
 	employees
 ORDER BY emp_no DESC;
+
+/* ==================== */
+# INDEXES 
+/* ==================== */
+
+
 
 
 
