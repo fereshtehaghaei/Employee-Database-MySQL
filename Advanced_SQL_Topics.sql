@@ -96,8 +96,20 @@ SELECT
 INTO 
 	v_curr_salary
 FROM
-	
-
+	salaries
+WHERE
+	emp_no = NEW.emp_no;
+	IF v_curr_salary IS NOT NULL THEN
+		UPDATE salaries
+		SET
+			to_date = SYSDATE()
+		WHERE
+			emp_no = NEW.emp_no and to_date = NEW.to_date;
+		
+        INSERT INTO salaries
+			VALUES (NEW.emp_no, v_curr_salary + 20000, NEW.from_date, NEW.to_date); 
+		END IF;
+END $$
 
 
 
