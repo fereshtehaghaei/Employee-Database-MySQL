@@ -72,7 +72,13 @@ BEGIN
 END $$
 DELIMITER ;
 
+/*===================*/
+/* SYSTEM FUNCTIONS */
+/*===================*/
 
+/* DATE */
+SELECT SYSDATE();
+SELECT DATE_FORMAT(SYSDATE(), '%y-%m-%d') as today;
 
 
 
