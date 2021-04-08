@@ -31,3 +31,21 @@ SET GLOBAL var_name = var_value;
 SET @@global.var_name = var_value;
 SET GLOBAL max_connections = 1;
  
+/* User Defiend vs System Variables */
+/* User Defined: variables that can be set y the user manually */
+/* System Variables: variables that are pre-defined on our system- the MySQL server*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
