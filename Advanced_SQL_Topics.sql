@@ -181,3 +181,23 @@ SHOW INDEX FROM employees FROM employees;
 # DROP an index
 # DROP INDEX index_name ON table_name
 DROP INDEX i_hire_date ON employees;
+
+/* 
+Select all records from the ‘salaries’ table of people whose salary is higher than $89,000 annualy.
+Then, create an index on the ‘salary’ column of that table, 
+and check if it has speed up the search of the same SELECT statement.
+*/
+SELECT * FROM salaries
+WHERE salary > 89000;
+CREATE INDEX i_salary ON salaries(salary);
+
+/* CASE STATEMENT */
+/*
+SELECT 
+	col_name(s)
+	CASE col_name_g
+		WHEN 'M' THEN 'Male'
+		ELSE 'Female
+	END AS col_name_g
+FROM 
+	table_name;
