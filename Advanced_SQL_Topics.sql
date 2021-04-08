@@ -24,3 +24,8 @@ DELIMITER ;
 /* Session Variable */
 /* created a session variable called it s_var1 */
 SET @s_var1 =3;
+
+/* Global Vriable  in two differe ways*/
+SET GLOBAL var_name = var_value;
+SET @@global.var_name = var_value;
+ 
