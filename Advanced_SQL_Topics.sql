@@ -1,3 +1,4 @@
+/*-------------------*/
 /* Local Variable */
 /* v_avg_salary is the Local Variable */
 
@@ -25,6 +26,7 @@ DELIMITER ;
 /* created a session variable called it s_var1 */
 SET @s_var1 =3;
 
+/*-------------------*/
 /* Global Variables: can not just set any variable to be global */
 /* Global Variable  in two differe ways*/
 SET GLOBAL var_name = var_value;
@@ -35,6 +37,25 @@ SET GLOBAL max_connections = 1;
 /* User Defined: variables that can be set y the user manually */
 /* System Variables: variables that are pre-defined on our system- the MySQL server*/
 
+/*-------------------*/
+/* MySQL Triggers */
+/* Trigger can be be calculate before or after INSERT, UPDATE, DELETE */
+
+USE employees;
+COMMIT;
+
+# BEFORE INSESRT
+DELIMITER $$
+
+CREATE TRIGGER before_salaries_insert
+BEFORE INSERT ON salaries
+FOR EACH ROW
+BEGIN
+	IF NEW.salary < 0 THEN
+		SET NEW.salary = 0;
+	END IF;
+END $$
+DELIMITER ;
 
 
 
