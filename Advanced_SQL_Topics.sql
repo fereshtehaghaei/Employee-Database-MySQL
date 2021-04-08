@@ -143,7 +143,9 @@ ORDER BY emp_no DESC;
 # INDEXES 
 /* ==================== */
 # Data taken from a column of the table and stored in a certain order in a distinct place
-# index increase the speed of search 
+# index increase the speed of search
+# Primary keys and unique keys are indexes  
+ 
 /*
 CREATE INDEX index_name
 ON table_name (col_nam, col_names);
@@ -154,10 +156,22 @@ FROM
 	employees
 WHERE 
 	hire_date > '2000-01-01';
-/* Now let's create an INDEX */
+/* Now let's create an INDEX  then run above query*/
 CREATE INDEX i_hire_date ON employees(hire_date);
 
-
+#------------------------
+# COMPOSIE INDEXES 
+/* 
+CREATE INDEX index_name
+ON table_name (col_nam, col_names);
+*/
+SELECT *
+FROM 
+	employees
+WHERE 
+	first_name = 'Georgi'
+		AND last_name = 'Facello';
+CREATE INDEX i_composite ON employees(first_name, last_name);
 
 
 
