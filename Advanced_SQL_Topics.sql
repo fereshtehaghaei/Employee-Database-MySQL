@@ -80,8 +80,23 @@ DELIMITER ;
 SELECT SYSDATE();
 SELECT DATE_FORMAT(SYSDATE(), '%y-%m-%d') as today;
 
-
-
+/* a new employee who has been be promoted to a manger and 
+	their salary is now 20,000 higher a new record in department manager, 
+	create a trigger that will apply several modifications to the salaries table once the relevant recored in 
+	deparment mangger table has been inserted. start date same as new from date = 1-1-9999
+*/
+# After Trigger
+CREATE TRIGGER trig_ins_dept_mng
+AFTER INSERT ON dept_manager
+FOR EACH ROW
+BEGIN
+	DECLARE v_curr_salary int;
+SELECT
+	MAX(salary)
+INTO 
+	v_curr_salary
+FROM
+	
 
 
 
