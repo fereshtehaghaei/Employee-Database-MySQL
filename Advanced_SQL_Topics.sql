@@ -177,4 +177,4 @@ CREATE INDEX i_composite ON employees(first_name, last_name);
 # SHOW INDEX FROM table_name FROM database_name_that_table_belongs;
 SHOW INDEX FROM employees FROM employees;
 
-
+DROP INDEX i_hire_date ON employees;
