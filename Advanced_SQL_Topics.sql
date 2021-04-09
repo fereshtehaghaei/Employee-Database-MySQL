@@ -221,6 +221,25 @@ WHERE
 	your condition;
 */
 
+/* ----------------------------------
+CASE statement with MANY CONDISTIONS
+-------------------------------------
+SELECT
+	column_name(s)
+    if there are any formulas value_1 - value_2 AS your_new_col_name_1
+	CASE
+		WHEN condition_1 THEN 'result_1'
+		WHEN condition_2 THEN 'result_2'
+		…
+		ELSE 'alternative_result_3'
+	END AS your_new_result_col_name_2
+FROM
+	table name
+JOIN
+	join if there are any tables ON t1.col_1 = t2.col_1
+GROUP BY if_there_are_any;
+*/
+
 
 /*--------------------
 # IF Statement
