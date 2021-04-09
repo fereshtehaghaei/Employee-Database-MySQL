@@ -320,3 +320,17 @@ Extract the employee number, first name, and last name of the first 100 employee
 and add a fourth column, called “current_employee” saying “Is still employed” 
 if the employee is still working in the company, or “Not an employee anymore” if they aren’t. 
 */
+select * from dept_emp;
+
+SELECT
+	de.emp_no,
+    e.first_name,
+    e.last_name,
+	CASE
+		WHEN to_date > date THEN  'Is Still Employed'
+        ELSE 'Not an Employee'
+	END AS Employee_Status
+FROM employees e
+JOIN 
+	dept_emp dm ON de.emp_no = e.emp_no;
+
