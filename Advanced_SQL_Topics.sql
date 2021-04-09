@@ -279,18 +279,23 @@ Extract a dataset containing the following information about the managers: emplo
 Add two columns at the end – one showing the difference between the maximum and minimum salary of that employee, 
 and another one saying whether this salary raise was higher than $30,000 or NOT.
 */
+# One way of solving with CASE and WHEN statment
 SELECT
-	e.emp_no,
+	dm.emp_no,
     e.first_name,
     e.last_name,
-    MAX(s.salary) - MIN(s.salary) AS Salary_Difference
+    MAX(s.salary) - MIN(s.salary) AS Salary_Difference,
 	CASE
 		WHEN  MAX(s.salary) - MIN(s.salary) > 30000 THEN 'salary raise higher than $30,000'
 		ELSE 'salary raise less than $30,000'
         
-	END AS salary_raised
+	END AS salary_raise
 FROM
-	employees e
+	dept_manager dm
 JOIN
-	salaries s ON s.emp_no = e.emp_n
+	employees e ON e.emp_no = dm. emp_no
+JOIN
+	salaries s ON s.emp_no = dm.emp_n
 GROUP BY s.emp_no;
+
+# second way of solving with IF statment
