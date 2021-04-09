@@ -273,3 +273,24 @@ FROM
 JOIN
 	dept_manager dm ON e.emp_no = dm.emp_no
 WHERE emp_no > 109990;
+
+/* 
+Extract a dataset containing the following information about the managers: employee number, first name, and last name. 
+Add two columns at the end – one showing the difference between the maximum and minimum salary of that employee, 
+and another one saying whether this salary raise was higher than $30,000 or NOT.
+*/
+SELECT
+	e.emp_no,
+    e.first_name,
+    e.last_name,
+    MAX(s.salary) - MIN(s.salary) AS Salary_Difference
+	CASE
+		WHEN  MAX(s.salary) - MIN(s.salary) > 30000 THEN 'salary raise higher than $30,000'
+		ELSE 'salary raise less than $30,000'
+        
+	END AS salary_raised
+FROM
+	employees e
+JOIN
+	salaries s ON s.emp_no = e.emp_n
+GROUP BY s.emp_no;
