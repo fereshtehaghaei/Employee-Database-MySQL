@@ -323,14 +323,17 @@ if the employee is still working in the company, or â€œNot an employee anymoreâ€
 select * from dept_emp;
 
 SELECT
-	de.emp_no,
+	e.emp_no,
     e.first_name,
     e.last_name,
 	CASE
-		WHEN to_date > date THEN  'Is Still Employed'
-        ELSE 'Not an Employee'
+		WHEN MAX(de.to_date) > SYSDATE() THEN  'Is Still Employed'
+        ELSE 'No Longer an Employee'
 	END AS Employee_Status
-FROM employees e
+FROM 
+	employees e
 JOIN 
-	dept_emp dm ON de.emp_no = e.emp_no;
+	dept_emp de ON de.emp_no = e.emp_no
+GROUP BY de.emp_no
+LIMIT 100;
 
