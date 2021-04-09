@@ -192,12 +192,31 @@ WHERE salary > 89000;
 CREATE INDEX i_salary ON salaries(salary);
 
 /* CASE STATEMENT */
+# One way of writing a Case Statement
 /*
 SELECT 
 	col_name(s)
 	CASE col_name_g
 		WHEN 'M' THEN 'Male'
-		ELSE 'Female
+		ELSE 'Female'
 	END AS col_name_g
 FROM 
 	table_name;
+*/
+
+
+# 2nd way of writing a Case Statement
+/*
+SELECT 
+	col_name(s)
+	CASE 
+		WHEN col_name IS NOT NULL THEN 'Manager'
+		ELSE 'Employee'
+	END AS col_name
+FROM 
+	table_name t
+JOIN 
+	if there any joins table_name tn ON t.col_1 = tn.col_2
+WHERE
+	your condition;
+*/
