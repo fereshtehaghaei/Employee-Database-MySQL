@@ -220,3 +220,17 @@ JOIN
 WHERE
 	your condition;
 */
+
+
+/*--------------------
+# IF Statement
+----------------------*/
+# Obtaining the same results using IF statement
+# IF has some limitation, you can ONLY have one condition
+/*
+SELECT 
+	col_name(s)
+	IF(col_name_g = 'M', 'Male', 'Female') AS col_name_g
+FROM 
+	table_name;
+*/
