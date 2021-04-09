@@ -255,7 +255,7 @@ FROM
 */
 
 
-/*  
+/*  CASE exercise #1
 obtain a result set containing the employee number, first name, and last name of all employees with a number higher than 109990. 
 Create a fourth column in the query, indicating whether this employee is also a manager, 
 according to the data provided in the dept_manager table, or a regular employee. 
@@ -274,7 +274,7 @@ JOIN
 	dept_manager dm ON e.emp_no = dm.emp_no
 WHERE emp_no > 109990;
 
-/* 
+/* CASE Exercise #2
 Extract a dataset containing the following information about the managers: employee number, first name, and last name. 
 Add two columns at the end – one showing the difference between the maximum and minimum salary of that employee, 
 and another one saying whether this salary raise was higher than $30,000 or NOT.
@@ -313,3 +313,10 @@ JOIN
 JOIN  
     salaries s ON s.emp_no = dm.emp_no  
 GROUP BY s.emp_no;
+
+
+/* CASE Exercise #3
+Extract the employee number, first name, and last name of the first 100 employees, 
+and add a fourth column, called “current_employee” saying “Is still employed” 
+if the employee is still working in the company, or “Not an employee anymore” if they aren’t. 
+*/
